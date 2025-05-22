@@ -1,15 +1,14 @@
 const express = require('express');
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 
-// JSON response for hello route
-app.get('/hello', (req, res) => {
-  res.json({ message: 'Hello from Express.js!' });
-});
-
-// JSON response for root route
 app.get('/', (req, res) => {
   res.json({ name: 'welcome' });
+});
+
+app.get('/hello', (req, res) => {
+  res.json({ message: 'Hello from Express.js!' });
 });
 
 app.listen(PORT, () => {
